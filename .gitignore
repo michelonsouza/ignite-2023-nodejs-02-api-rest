@@ -10,7 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 coverage
-tmp
+db/app.db
 *.local
 
 # Editor directories and files
