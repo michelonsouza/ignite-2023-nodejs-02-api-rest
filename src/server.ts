@@ -1,21 +1,27 @@
+import 'dotenv/config';
+
 import fastify from 'fastify';
 
-import { testLog } from '@/folder';
+import { knex } from './database';
 
 const app = fastify({
-  logger: true,
+  logger: JSON.parse(process.env.LOGGER),
 });
 
-app.get('/hello', async (_request, _response) => 'Hello World');
+app.get('/hello', async () => {
+  const tables = await knex('sqlite_schema').select('*');
 
-const port = 3333;
+  return tables;
+});
+
 app
   .listen({
-    port,
+    port: Number(process.env.PORT),
   })
   .then(() => {
-    testLog();
-    console.info(`Server is running on http://localhost:${port} 🚀`);
+    console.info(
+      `Server is running on http://localhost:${process.env.PORT} 🚀`,
+    );
   })
   .catch(error => {
     app.log.error(error);
