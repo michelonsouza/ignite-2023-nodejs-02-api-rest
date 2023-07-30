@@ -21,7 +21,7 @@
     "name": "Michelon Souza",
     "email": "michelon.souza@hotmail.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
