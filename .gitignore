@@ -12,6 +12,7 @@ dist
 coverage
 db/app.db
 *.local
+.eslintcache
 
 # Editor directories and files
 .vscode/*

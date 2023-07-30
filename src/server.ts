@@ -4,8 +4,11 @@ import fastify from 'fastify';
 
 import { knex } from './database';
 
+const logger = JSON.parse(process.env.LOGGER);
+const port = Number(process.env.PORT);
+
 const app = fastify({
-  logger: JSON.parse(process.env.LOGGER),
+  logger,
 });
 
 app.get('/hello', async () => {
@@ -16,12 +19,10 @@ app.get('/hello', async () => {
 
 app
   .listen({
-    port: Number(process.env.PORT),
+    port,
   })
   .then(() => {
-    console.info(
-      `Server is running on http://localhost:${process.env.PORT} 🚀`,
-    );
+    console.info(`Server is running on http://localhost:${port} 🚀`);
   })
   .catch(error => {
     app.log.error(error);

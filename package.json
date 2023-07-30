@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "knex": "node --no-warnings --loader tsx ./node_modules/.bin/knex",
+    "knex": "node --no-warnings --loader tsx ./node_modules/.bin/knex --",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "lint": "eslint -c ./.eslintrc.json src/**/* --ext .ts --fix"
