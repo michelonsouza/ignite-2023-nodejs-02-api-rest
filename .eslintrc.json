@@ -5,7 +5,6 @@
   },
   "extends": [
     "airbnb-base",
-    "airbnb",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier"
@@ -27,6 +26,7 @@
         "ts": "never"
       }
     ],
+    "no-underscore-dangle": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {

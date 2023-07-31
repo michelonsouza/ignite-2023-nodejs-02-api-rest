@@ -1,20 +1,20 @@
-import 'dotenv/config';
-
+import { randomUUID } from 'node:crypto';
 import fastify from 'fastify';
 
 import { knex } from './database';
+import { env } from './env';
 
-const logger = JSON.parse(process.env.LOGGER);
-const port = Number(process.env.PORT);
+const logger = !!JSON.parse(env.LOGGER);
+const port = Number(env.PORT);
 
 const app = fastify({
   logger,
 });
 
 app.get('/hello', async () => {
-  const tables = await knex('sqlite_schema').select('*');
+  const transacions = await knex('transactions').select('*');
 
-  return tables;
+  return transacions;
 });
 
 app
