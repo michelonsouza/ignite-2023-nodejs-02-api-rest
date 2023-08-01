@@ -19,6 +19,17 @@
   "rules": {
     "camelcase": "off",
     "no-console": ["warn", { "allow": ["error", "info", "clear"] }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "**/*.spec.js",
+          "**/*.test.ts",
+          "**/*.spec.ts"
+        ]
+      }
+    ],
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
