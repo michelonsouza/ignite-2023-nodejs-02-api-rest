@@ -12,7 +12,10 @@
     "knex": "node --no-warnings --loader tsx ./node_modules/.bin/knex --",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
-    "lint": "eslint -c ./.eslintrc.json --ext .ts --fix"
+    "lint": "eslint -c ./.eslintrc.json --ext .ts --fix",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "rocketseat",
@@ -29,6 +32,8 @@
     "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
+    "@vitest/coverage-v8": "^0.33.0",
+    "@vitest/ui": "^0.33.0",
     "eslint": "^8.46.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.9.0",
@@ -40,7 +45,8 @@
     "lint-staged": "^13.2.3",
     "prettier": "^3.0.0",
     "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
   },
   "dependencies": {
     "@fastify/cookie": "^8.3.0",
