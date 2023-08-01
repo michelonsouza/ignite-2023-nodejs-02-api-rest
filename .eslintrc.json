@@ -17,6 +17,7 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
+    "camelcase": "off",
     "no-console": ["warn", { "allow": ["error", "info", "clear"] }],
     "import/prefer-default-export": "off",
     "import/extensions": [
