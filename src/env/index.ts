@@ -4,6 +4,7 @@ import { z } from 'zod';
 
 if (process.env?.NODE_ENV === 'test') {
   config({ path: '.env.test' });
+  /* c8 ignore next 3 */
 } else {
   config();
 }
@@ -23,6 +24,7 @@ const envSchema = z.object({
 
 const _env = envSchema.safeParse(process.env);
 
+/* c8 ignore next 8 */
 if (!_env.success) {
   console.error({
     message: '⚠️ Invalid environment variables',

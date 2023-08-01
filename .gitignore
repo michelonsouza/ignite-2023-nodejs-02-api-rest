@@ -10,8 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 coverage
-db/app.db
-db/test.db
+db/*.db
 *.local
 .eslintcache
 

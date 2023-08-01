@@ -1,11 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { resolve } from 'node:path';
+import { URL } from 'node:url';
 import { defineConfig } from 'vitest/config';
+
+const srcPath = new URL('./src', import.meta.url);
 
 export default defineConfig({
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
+      '@': srcPath.pathname,
     },
   },
 });
