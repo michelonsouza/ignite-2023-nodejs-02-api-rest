@@ -8,6 +8,7 @@ export declare global {
       NODE_ENV: NodeEnv;
       LOGGER?: BooleanType;
       DATABASE_URL: string;
+      DATABASE_CLIENT?: 'sqlite' | 'pg';
     }
   }
 }

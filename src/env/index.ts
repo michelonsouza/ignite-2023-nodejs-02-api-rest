@@ -13,8 +13,9 @@ const envSchema = z.object({
   DATABASE_URL: z.string({
     required_error: 'DATABASE_URL environment variable is required',
   }),
-  PORT: z.string().default('3333'),
+  PORT: z.coerce.number().default(3333),
   LOGGER: z.enum(['true', 'false']).default('false'),
+  DATABASE_CLIENT: z.enum(['sqlite', 'pg']).default('sqlite'),
   NODE_ENV: z
     .enum(['development', 'test', 'production'], {
       required_error: 'NODE_ENV environment variable is required',
