@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": ">=18",
+    "node": "18.17.0",
     "npm": "You must run yarn in this project",
     "yarn": "^1.22.x"
   },
